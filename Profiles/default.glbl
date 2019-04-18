@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dNGYcnFwcnOU2K1Ubvh1twztPjP109110bKXG9101AJNtIcig110'</initValue>
+      <name>APPLITOOLS_API_KEY</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>true</initValue>
+      <name>APPLITOOLS_SETUP</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
