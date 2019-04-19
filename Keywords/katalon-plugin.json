@@ -2,6 +2,7 @@
    "keywords": [
       "com.kms.katalon.keyword.pdf.CompareMode",
       "com.kms.katalon.keyword.pdf.ImageUtil",
-	  "com.kms.katalon.keyword.pdf.PDFUtil"
+	  "com.kms.katalon.keyword.pdf.PDFUtil",
+	  "com.kms.katalon.keyword.pdf.PDF"
    ]
 }
