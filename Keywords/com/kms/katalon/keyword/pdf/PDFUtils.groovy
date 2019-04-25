@@ -257,7 +257,6 @@ public class PDFUtils {
 
 		String file1Txt = PDFUtils.getPDFText(file1, startPage, endPage).trim();
 		String file2Txt = PDFUtils.getPDFText(file2, startPage, endPage).trim();
-		KeywordUtil.logInfo("excludePattern : " + excludePattern);
 		if(null!=excludePattern && excludePattern.length>0){
 			for(int i=0; i<excludePattern.length; i++){
 				file1Txt = file1Txt.replaceAll(excludePattern[i], "");
