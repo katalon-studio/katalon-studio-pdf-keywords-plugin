@@ -103,8 +103,8 @@ public class ImageUtils {
 		KeywordUtil.logInfo("file1 : " + file1);
 		KeywordUtil.logInfo("file2 : " + file2);
 
-		int pgCount1 = PDF.getPageCount(file1);
-		int pgCount2 = PDF.getPageCount(file2);
+		int pgCount1 = PDF.getPageNumber(file1);
+		int pgCount2 = PDF.getPageNumber(file2);
 
 		if(pgCount1!=pgCount2){
 			KeywordUtil.logInfo("files page counts do not match - returning false");

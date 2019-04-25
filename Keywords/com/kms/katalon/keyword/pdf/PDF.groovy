@@ -33,7 +33,7 @@ public class PDF {
 	 */
 	@CompileStatic
 	@Keyword
-	static int getPageCount(String file) throws IOException{
+	static int getPageNumber(String file) throws IOException{
 		KeywordUtil.logInfo("file :" + file)
 		PDDocument doc = PDDocument.load(new File(file));
 		int pageCount = doc.getNumberOfPages();
@@ -97,8 +97,8 @@ public class PDF {
 	 */
 	@CompileStatic
 	@Keyword
-	static boolean compareAllPages(String file1, String file2, String[] excludePattern) throws IOException{
-		return PDFUtils.comparePdfFiles(file1, file2, -1, -1, excludePattern);
+	static boolean compareAllPages(String file1, String file2, def excludePattern) throws IOException{
+		return PDFUtils.comparePdfFiles(file1, file2, -1, -1, excludePattern as String[]);
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class PDF {
 	 */
 	@CompileStatic
 	@Keyword
-	static boolean compareInPageRange(String file1, String file2, int startPage, int endPage, String[] excludePattern) throws IOException{
-		return PDFUtils.comparePdfFiles(file1, file2, startPage, endPage, excludePattern);
+	static boolean compareInPageRange(String file1, String file2, int startPage, int endPage, def excludePattern) throws IOException{
+		return PDFUtils.comparePdfFiles(file1, file2, startPage, endPage, excludePattern as String[]);
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class PDF {
 	 */
 	@CompileStatic
 	@Keyword
-	static boolean compareFromPage(String file1, String file2, int startPage, String[] excludePattern) throws IOException{
-		return PDFUtils.comparePdfFiles(file1, file2, startPage, -1, excludePattern);
+	static boolean compareFromPage(String file1, String file2, int startPage, def excludePattern) throws IOException{
+		return PDFUtils.comparePdfFiles(file1, file2, startPage, -1, excludePattern as String[]);
 	}
 
 	/**

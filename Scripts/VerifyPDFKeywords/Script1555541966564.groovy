@@ -19,7 +19,7 @@ import com.kms.katalon.core.configuration.RunConfiguration
  
  String path = RunConfiguration.getProjectDir() + "/Data Files/"
 //Get the page count of the document
- CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageCount'(path + "test_text1.pdf")
+ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageNumber'(path + "test_text1.pdf")
 
 //Get the content of the document as plain text
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextFromPage'(path + "test_text1.pdf", 
@@ -32,31 +32,31 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getAllText'(path + "test_text1.p
 
 //compare all pages of two given pdf documents without excluding any patterns
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path+ "test_text1.pdf", 
-    path + "test_text2.pdf")
+    path + "test_text2.pdf",null)
 
 //compare all pages of two given pdf documents with excluding patterns: "1998","1999"
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path+ "test_text1.pdf", 
-    path+ "test_text2.pdf", '1998','1999')
+    path+ "test_text2.pdf", ['1998','1999'])
 
 //compare particular pages (start page, end page) of two given pdf documents with no difference in pages 
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + "test_text1.pdf", 
-    path + "test_text2.pdf", 6, 7)
+    path + "test_text2.pdf", 6, 7,null)
 
 //compare particular pages (start page, end page) of two given pdf documents with differences in pages 
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path+ "test_text1.pdf", 
-   path + "test_text2.pdf", 4, 5)
+   path + "test_text2.pdf", 4, 5,null)
 
 //compare particular pages (start page, end page) of two given pdf documents with differences in pages 
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + "test_text1.pdf", 
-    path+ "test_text2.pdf", 4, 5, '1998', '1999')
+    path+ "test_text2.pdf", 4, 5, ['1998', '1999'])
 
 //compare particular pages (start page, no end page) of two given pdf documents with differences in pages 
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path+ "test_text1.pdf", 
-    path+ "test_text2.pdf", 4)
+    path+ "test_text2.pdf", 4,null)
 
 //compare particular pages (start page, no end page) of two given pdf documents with differences in pages 
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path+ "test_text1.pdf", 
-    path+ "test_text2.pdf", 4, '1998', '1999')
+    path+ "test_text2.pdf", 4, ['1998', '1999'])
 
 //Compare 2 difference pdf documents pixel by pixel for the content and format
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareByPixel'(path+ "test_image1_diff.pdf", 

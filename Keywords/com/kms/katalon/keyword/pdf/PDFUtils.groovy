@@ -240,9 +240,9 @@ public class PDFUtils {
 	 * This method compare PDF files
 	 */
 	@CompileStatic
-	static boolean comparePdfFiles(String file1, String file2, int startPage, int endPage, String[] excludePattern)throws IOException{
+	static boolean comparePdfFiles(String file1, String file2, int startPage, int endPage, def excludePattern)throws IOException{
 		if(CompareModes.TEXT_MODE==PDFUtils.compareMode){
-			return comparepdfFilesWithTextMode(file1, file2, startPage, endPage, excludePattern);
+			return comparepdfFilesWithTextMode(file1, file2, startPage, endPage, excludePattern as String[]);
 		}
 		else {
 			return ImageUtils.comparePdfByImage(file1, file2, startPage, endPage);
@@ -254,7 +254,6 @@ public class PDFUtils {
 	 */
 	@CompileStatic
 	static boolean comparepdfFilesWithTextMode(String file1, String file2, int startPage, int endPage, String[] excludePattern) throws IOException{
-
 		String file1Txt = PDFUtils.getPDFText(file1, startPage, endPage).trim();
 		String file2Txt = PDFUtils.getPDFText(file2, startPage, endPage).trim();
 		if(null!=excludePattern && excludePattern.length>0){
