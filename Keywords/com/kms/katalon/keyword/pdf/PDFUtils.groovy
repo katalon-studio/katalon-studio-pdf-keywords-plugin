@@ -22,7 +22,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import groovy.transform.CompileStatic
 
 @CompileStatic
-public class PDFUtil {
+public class PDFUtils {
 
 	static String imageDestinationPath;
 	static boolean bTrimWhiteSpace;
@@ -30,7 +30,7 @@ public class PDFUtil {
 	static Color imgColor;
 	static PDFTextStripper stripper;
 	static boolean bCompareAllPages;
-	static CompareMode compareMode;
+	static CompareModes compareMode;
 	static int startPage = 1;
 	static int endPage = -1;
 
@@ -39,7 +39,7 @@ public class PDFUtil {
 		bHighlightPdfDifference = false;
 		imgColor = Color.MAGENTA;
 		bCompareAllPages = false;
-		compareMode = CompareMode.TEXT_MODE;
+		compareMode = CompareModes.TEXT_MODE;
 		System.setProperty("sun.java2d.cmm", "sun.java2d.cmm.kcms.KcmsServiceProvider");
 	}
 
@@ -48,7 +48,7 @@ public class PDFUtil {
 	 * @param mode CompareMode
 	 */
 	@CompileStatic
-	static void setCompareMode(CompareMode mode){
+	static void setCompareMode(CompareModes mode){
 		compareMode = mode;
 	}
 
@@ -57,7 +57,7 @@ public class PDFUtil {
 	 * @return CompareMode
 	 */
 	@CompileStatic
-	static CompareMode getCompareMode(){
+	static CompareModes getCompareMode(){
 		return this.compareMode;
 	}
 
@@ -171,18 +171,18 @@ public class PDFUtil {
 		KeywordUtil.logInfo("Given end   page:" + end);
 
 		if((start > 0 && start <= pagecount)){
-			PDFUtil.startPage = start;
+			PDFUtils.startPage = start;
 		}else{
-			PDFUtil.startPage = 1;
+			PDFUtils.startPage = 1;
 		}
 		if((end > 0 && end >= start && end <= pagecount)){
-			PDFUtil.endPage = end;
+			PDFUtils.endPage = end;
 		}else{
-			PDFUtil.endPage = pagecount;
+			PDFUtils.endPage = pagecount;
 		}
 		document.close();
-		KeywordUtil.logInfo("Updated start page:" + PDFUtil.startPage);
-		KeywordUtil.logInfo("Updated end   page:" + PDFUtil.endPage);
+		KeywordUtil.logInfo("Updated start page:" + PDFUtils.startPage);
+		KeywordUtil.logInfo("Updated end   page:" + PDFUtils.endPage);
 	}
 
 	/**
@@ -217,17 +217,17 @@ public class PDFUtil {
 		PDDocument doc = PDDocument.load(new File(file));
 
 		PDFTextStripper localStripper = new PDFTextStripper();
-		if(null!=PDFUtil.stripper){
-			localStripper = PDFUtil.stripper;
+		if(null!=PDFUtils.stripper){
+			localStripper = PDFUtils.stripper;
 		}
 
 		this.updateStartAndEndPages(file, startPage, endPage);
-		localStripper.setStartPage(PDFUtil.startPage);
-		localStripper.setEndPage(PDFUtil.endPage);
+		localStripper.setStartPage(PDFUtils.startPage);
+		localStripper.setEndPage(PDFUtils.endPage);
 
 		String txt = localStripper.getText(doc);
 		KeywordUtil.logInfo("PDF Text before trimming : " + txt);
-		if(PDFUtil.bTrimWhiteSpace){
+		if(PDFUtils.bTrimWhiteSpace){
 			txt = txt.trim().replaceAll("\\s+", " ").trim();
 			KeywordUtil.logInfo("PDF Text after  trimming : " + txt);
 		}
@@ -240,12 +240,12 @@ public class PDFUtil {
 	 * This method compare PDF files
 	 */
 	@CompileStatic
-	static boolean comparePdfFiles(String file1, String file2, int startPage, int endPage, String... excludePattern)throws IOException{
-		if(CompareMode.TEXT_MODE==PDFUtil.compareMode){
+	static boolean comparePdfFiles(String file1, String file2, int startPage, int endPage, String[] excludePattern)throws IOException{
+		if(CompareModes.TEXT_MODE==PDFUtils.compareMode){
 			return comparepdfFilesWithTextMode(file1, file2, startPage, endPage, excludePattern);
 		}
 		else {
-			return ImageUtil.comparePdfByImage(file1, file2, startPage, endPage);
+			return ImageUtils.comparePdfByImage(file1, file2, startPage, endPage);
 		}
 	}
 
@@ -253,10 +253,10 @@ public class PDFUtil {
 	 * This method compare PDF files with text mode
 	 */
 	@CompileStatic
-	static boolean comparepdfFilesWithTextMode(String file1, String file2, int startPage, int endPage, String... excludePattern) throws IOException{
+	static boolean comparepdfFilesWithTextMode(String file1, String file2, int startPage, int endPage, String[] excludePattern) throws IOException{
 
-		String file1Txt = PDFUtil.getPDFText(file1, startPage, endPage).trim();
-		String file2Txt = PDFUtil.getPDFText(file2, startPage, endPage).trim();
+		String file1Txt = PDFUtils.getPDFText(file1, startPage, endPage).trim();
+		String file2Txt = PDFUtils.getPDFText(file2, startPage, endPage).trim();
 		KeywordUtil.logInfo("excludePattern : " + excludePattern);
 		if(null!=excludePattern && excludePattern.length>0){
 			for(int i=0; i<excludePattern.length; i++){

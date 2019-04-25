@@ -1,8 +1,8 @@
 {
    "keywords": [
-      "com.kms.katalon.keyword.pdf.CompareMode",
-      "com.kms.katalon.keyword.pdf.ImageUtil",
-	  "com.kms.katalon.keyword.pdf.PDFUtil",
+      "com.kms.katalon.keyword.pdf.CompareModes",
+      "com.kms.katalon.keyword.pdf.ImageUtils",
+	  "com.kms.katalon.keyword.pdf.PDFUtils",
 	  "com.kms.katalon.keyword.pdf.PDF"
    ]
 }

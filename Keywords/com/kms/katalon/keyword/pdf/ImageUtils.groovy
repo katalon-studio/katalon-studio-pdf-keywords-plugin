@@ -18,7 +18,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import groovy.transform.CompileStatic
 
 @CompileStatic
-public class ImageUtil {
+public class ImageUtils {
 
 	/**
 	 * This method compares and highlights the differences between two images
@@ -47,7 +47,7 @@ public class ImageUtil {
 		KeywordUtil.logInfo("Image compared - matched" + '\n');
 		return true;
 	}
-	
+
 	/**
 	 * This method saves the image
 	 */
@@ -73,15 +73,15 @@ public class ImageUtil {
 
 		try {
 			File sourceFile = new File(file);
-			PDFUtil.createImageDestinationDirectory(file);
-			PDFUtil.updateStartAndEndPages(file, startPage, endPage);
+			PDFUtils.createImageDestinationDirectory(file);
+			PDFUtils.updateStartAndEndPages(file, startPage, endPage);
 			String fileName = sourceFile.getName().replace(".pdf", "");
 
 			PDDocument document = PDDocument.load(sourceFile);
 			PDFRenderer pdfRenderer = new PDFRenderer(document);
-			for(int iPage=PDFUtil.startPage-1;iPage<PDFUtil.endPage;iPage++){
+			for(int iPage=PDFUtils.startPage-1;iPage<PDFUtils.endPage;iPage++){
 				KeywordUtil.logInfo("Page No : " + (iPage+1));
-				String fname = PDFUtil.imageDestinationPath + fileName + "_" + (iPage + 1) + ".png";
+				String fname = PDFUtils.imageDestinationPath + fileName + "_" + (iPage + 1) + ".png";
 				BufferedImage image = pdfRenderer.renderImageWithDPI(iPage, 300, ImageType.RGB);
 				ImageIOUtil.writeImage(image, fname , 300);
 				imgNames.add(fname);
@@ -111,15 +111,15 @@ public class ImageUtil {
 			return false;
 		}
 
-		if(PDFUtil.bHighlightPdfDifference)
-			PDFUtil.createImageDestinationDirectory(file2);
+		if(PDFUtils.bHighlightPdfDifference)
+			PDFUtils.createImageDestinationDirectory(file2);
 
-		PDFUtil.updateStartAndEndPages(file1, startPage, endPage);
-		KeywordUtil.logInfo("PDFUtil.startPage: " + PDFUtil.startPage);
-		KeywordUtil.logInfo("PDFUtil.endPage: " + PDFUtil.endPage);
+		PDFUtils.updateStartAndEndPages(file1, startPage, endPage);
+		KeywordUtil.logInfo("PDFUtils.startPage: " + PDFUtils.startPage);
+		KeywordUtil.logInfo("PDFUtils.endPage: " + PDFUtils.endPage);
 		KeywordUtil.logInfo("file1: " + file1);
 		KeywordUtil.logInfo("file2: " + file2);
-		return this.convertToImageAndCompare(file1, file2, PDFUtil.startPage, PDFUtil.endPage);
+		return this.convertToImageAndCompare(file1, file2, PDFUtils.startPage, PDFUtils.endPage);
 	}
 
 	/**
@@ -146,16 +146,15 @@ public class ImageUtil {
 
 			for(int iPage=startPage-1;iPage<endPage;iPage++){
 				String fileName = new File(file1).getName().replace(".pdf", "_") + (iPage + 1);
-				String fileNametemp = PDFUtil.getImageDestinationPath() + fileName + "_diff.png"
-				fileName = PDFUtil.getImageDestinationPath() + "/" + fileName + "_diff.png";
+				String fileNametemp = PDFUtils.getImageDestinationPath() + fileName + "_diff.png"
+				fileName = PDFUtils.getImageDestinationPath() + "/" + fileName + "_diff.png";
 
 
 				KeywordUtil.logInfo("Comparing Page No : " + (iPage+1));
 				BufferedImage image1 = pdfRenderer1.renderImageWithDPI(iPage, 300, ImageType.RGB);
 				BufferedImage image2 = pdfRenderer2.renderImageWithDPI(iPage, 300, ImageType.RGB);
-
-				result = ImageUtil.compareAndHighlight(image1, image2, fileName, PDFUtil.bHighlightPdfDifference, PDFUtil.imgColor.getRGB()) && result;
-				if(!PDFUtil.bCompareAllPages && !result){
+				result = ImageUtils.compareAndHighlight(image1, image2, fileName, PDFUtils.bHighlightPdfDifference, PDFUtils.imgColor.getRGB()) && result
+				if(!PDFUtils.bCompareAllPages && !result){
 					KeywordUtil.logInfo("See the differences in path: " + fileNametemp);
 					break;
 				}
@@ -183,25 +182,25 @@ public class ImageUtil {
 		boolean bImageFound = false;
 		try {
 
-			PDFUtil.createImageDestinationDirectory(file);
-			String fileName = PDFUtil.getFileName(file).replace(".pdf", "_resource");
+			PDFUtils.createImageDestinationDirectory(file);
+			String fileName = PDFUtils.getFileName(file).replace(".pdf", "_resource");
 
 			PDDocument document = PDDocument.load(new File(file));
 			PDPageTree list = document.getPages();
 
-			PDFUtil.updateStartAndEndPages(file, startPage, endPage);
+			PDFUtils.updateStartAndEndPages(file, startPage, endPage);
 
 			int totalImages = 1;
-			KeywordUtil.logInfo("start : " + PDFUtil.startPage);
-			KeywordUtil.logInfo("endPage : " + PDFUtil.endPage);
-			for(int iPage=PDFUtil.startPage-1;iPage<PDFUtil.endPage;iPage++){
+			KeywordUtil.logInfo("start : " + PDFUtils.startPage);
+			KeywordUtil.logInfo("endPage : " + PDFUtils.endPage);
+			for(int iPage=PDFUtils.startPage-1;iPage<PDFUtils.endPage;iPage++){
 				KeywordUtil.logInfo("Page No : " + (iPage+1));
 				PDResources pdResources = list.get(iPage).getResources();
 				for (COSName c : pdResources.getXObjectNames()) {
 					PDXObject o = pdResources.getXObject(c);
 					if (o instanceof org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject) {
 						bImageFound = true;
-						String fname = PDFUtil.imageDestinationPath + "/" + fileName+ "_" + totalImages + ".png";
+						String fname = PDFUtils.imageDestinationPath + "/" + fileName+ "_" + totalImages + ".png";
 						ImageIO.write(((org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject)o).getImage(), "png", new File(fname));
 						imgNames.add(fname);
 						totalImages++;
@@ -210,7 +209,7 @@ public class ImageUtil {
 			}
 			document.close();
 			if(bImageFound)
-				KeywordUtil.logInfo("Images are saved @ " + PDFUtil.imageDestinationPath);
+				KeywordUtil.logInfo("Images are saved @ " + PDFUtils.imageDestinationPath);
 			else
 				KeywordUtil.logInfo("No images were found in the PDF");
 		}catch (Exception e) {

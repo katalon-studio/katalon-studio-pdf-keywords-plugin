@@ -1,7 +1,8 @@
 plugins {
   id 'java'
   id 'groovy'
-  id "com.katalon.gradle-plugin" version "0.0.7"
+  id 'com.github.johnrengelman.shadow' version '4.0.4'
+  id "com.katalon.gradle-plugin" version "0.0.6"
 }
 
 repositories {
@@ -23,18 +24,10 @@ shadowJar {
 }
 
 katalon {
-  dependencyPrefix = ""
+  dependencyPrefix = "com.katalon"
   minimize = false
 }
 
-jar {
-  from sourceSets.main.allSource
-}
-
-task sourceJar(type: Jar, dependsOn: classes) {
-  classifier = 'sources'
-  from sourceSets.main.groovy
-}
 dependencies {
   compile('com.testautomationguru.pdfutil:pdf-util:0.0.2') {
     exclude group: 'org.seleniumhq.selenium'

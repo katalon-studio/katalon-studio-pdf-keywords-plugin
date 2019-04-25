@@ -18,7 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-public enum CompareMode {
+public enum CompareModes {
 	TEXT_MODE,
 	VISUAL_MODE
 }
