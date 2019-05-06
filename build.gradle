@@ -28,8 +28,25 @@ katalon {
   minimize = false
 }
 
+configurations {
+    generateDocs
+}
+
 dependencies {
   compile('com.testautomationguru.pdfutil:pdf-util:0.0.2') {
     exclude group: 'org.seleniumhq.selenium'
   }
+  generateDocs ('org.codehaus.groovy:groovy-all:2.4.7')
 }
+
+task groovydoc(type: Groovydoc, overwrite:true) {
+    source = sourceSets.main.groovy
+    classpath = configurations.compile
+    groovyClasspath = project.configurations.generateDocs
+    include 'com/kms/katalon/keyword/pdf/*'
+}
+task publishGroovydoc(type: Copy) {
+    from 'build/docs/groovydoc'
+    into 'docs/api'
+}
+groovydoc.finalizedBy publishGroovydoc
