@@ -2,16 +2,21 @@
 
 bin
 
-Data Files/temp
-
-Drivers/*.jar
+Drivers
 
 Reports
+
+Libs
+
+/build
 
 .classpath
 
 .project
 
-.DS_Store
+.settings
 
-settings/external/com.kms.katalon.keyword.Applitools-Keywords.properties
+gradlew
+
+gradlew.bat
+Data Files/temp
