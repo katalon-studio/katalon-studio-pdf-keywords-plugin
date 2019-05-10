@@ -16,4 +16,8 @@ build
 
 .settings
 
+gradlew
+
+gradlew.bat
+
 Data Files/temp
