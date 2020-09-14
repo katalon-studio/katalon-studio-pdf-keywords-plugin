@@ -1,4 +1,4 @@
-# Katalon Studio Applitools Plugin
+# Katalon Studio PDF Keywords Plugin
 
 ## Develop
 
