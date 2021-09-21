@@ -1,15 +1,15 @@
 # Katalon Studio PDF Keywords Plugin
 
-PDF Keywords Plugin allows testers to manipulate existing PDF documents and extract content from them. This plugin comes along with a sample test case that allows you to develop further to suit your testing's purposes.
+PDF Keywords Plugin allows testers to manipulate existing PDF documents and extract content from them. This plugin comes with a sample test case that helps you develop further to suit your testing's purposes.
 
 ## Prerequisite
 
 - An active Katalon Studio Enterprise license. You can refer to this document here: [Katalon licensing](https://docs.katalon.com/katalon-studio/docs/license.html).
 ## Set Parameter
 
-The PDF Keyword plugin is using the PDFbox library. To activate the plugin, follow these steps:
+The PDF Keyword plugin uses the PDFbox library. To activate the plugin, follow these steps:
 
-1. Download **Apache PDFBox version 2.0.24** . You can download it here: [Apache PDFBox](https://www.apache.org/dyn/closer.lua/pdfbox/2.0.24/pdfbox-app-2.0.24.jar).
+1. Download **Apache PDFBox version 2.0.24**. You can download it here: [Apache PDFBox](https://www.apache.org/dyn/closer.lua/pdfbox/2.0.24/pdfbox-app-2.0.24.jar).
 2. Return to Katalon Studio, go to **Project > Settings > Library Management**. 
 3. In the **External Libraries**, click **Add** to browse the .jar file downloaded from Step 1. Click **Apply and Close**. Katalon Studio automatically imports the library into the project.
 ## Execute Test Cases
@@ -17,7 +17,7 @@ The PDF Keyword plugin is using the PDFbox library. To activate the plugin, foll
 ### Enable PDF Keywords Plugin
 
 1. Download and unzip the **PDF Keywords Plugin** project.
-2. Copy and patse your testing PDF files in **Project Folder\Data Files**.
+2. Copy and paste your testing PDF files in **Project Folder\Data Files**.
 3. Open the **PDF Keywords Plugin** project in Katalon Studio. To create a new test case, go to **File > New > Test Case**.
 4. In the new test case, switch to the **Script** tab, use the sample code below to enable **PDF Keywords Plugin**:
 
@@ -39,7 +39,7 @@ import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 
-// To specify path to data files
+// To specify the path to data files
 String path = RunConfiguration.getProjectDir() + '/Data Files/'
 
 ```
@@ -78,7 +78,7 @@ This keyword gets the total number of pages in the document.
 
 ### Example
 
-To get the total number of pages of the **Test_text1.pdf** PDF document, copy and patse the sample code as below:
+To get the total number of pages of the **Test_text1.pdf** PDF document, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -106,7 +106,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageNumber'(path + 'test_text
 </details>
 &nbsp;
 
-- To get the content of PDF file as plain text, use the following keywords:
+- To get the content of the PDF file as plain text, use the following keywords:
 
 <details><summary> The getTextFromPage keyword </summary>
 
@@ -144,7 +144,7 @@ This keyword gets the content of a specific PDF page as plain text.
 
 ### Example
 
-To get the Page 3 of the **Test_text1.pdf** PDF document as plain text, copy and patse the sample code as below:
+To get the Page 3 of the **Test_text1.pdf** PDF document as plain text, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -216,7 +216,7 @@ This keyword gets the content of a range of PDF pages as plain text.
 
 ### Example
 
-To get the Page 1-3 of the **Test_text1.pdf** PDF document as plain text, copy and patse the sample code as below:
+To get the Page 1-3 of the **Test_text1.pdf** PDF document as plain text, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -272,7 +272,7 @@ This keyword gets all content of the document as plain text.
 
 ### Example
 
-To get all pages of the **Test_text1.pdf** PDF document as plain text, copy and patse the sample code as below:
+To get all pages of the **Test_text1.pdf** PDF document as plain text, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -354,7 +354,7 @@ This keyword compares a particular page of two given PDF documents. The value re
 
 ### Example
 
-1.  To compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare Page 3 of the **Test_text1.pdf** and the **Test_text2.pdf** file without excluding any strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -379,7 +379,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_text1.pdf', path + 'test_text2.pdf', 3, null)
 
 ```
-2.  To compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 3 of the **Test_text1.pdf** and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -411,7 +411,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_te
 
 ### Description
 
-This keyword compares a range of page from two given PDF documents. The value returns true if the pages match, false if otherwise.
+This keyword compares a range of pages from two given PDF documents. The value returns true if the pages match, false if otherwise.
 
 ### Parameters
 <table width="854">
@@ -467,7 +467,7 @@ This keyword compares a range of page from two given PDF documents. The value re
 
 ### Example
 
-1.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare Page 1-3 of the **Test_text1.pdf** and the **Test_text2.pdf** without excluding any strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -492,7 +492,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + 'test_text1.pdf', path + 'test_text2.pdf', 1, 3, null)
 
 ```
-2.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 1-3 of the **Test_text1.pdf** and the **Test_text2.pdf** excluding the **1998**, **1999** strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -564,7 +564,7 @@ This keyword compares all pages of two given PDF documents. The value returns tr
 
 ### Example
 
-1.  To compare all pages of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare all pages of the **Test_text1.pdf** and the **Test_text2.pdf** without excluding any strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -589,7 +589,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path + 'test_text1.pdf', path + 'test_text2.pdf', null)
 
 ```
-2.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 1-3 of the **Test_text1.pdf** and the **Test_text2.pdf** excluding the **1998**, **1999** strings, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -687,7 +687,7 @@ This keyword compares a range of pages from two PDF documents pixel by pixel for
 
 ### Example
 
-To compare all pages of the **Test_text1.pdf** and the **Test_text2.pdf** pixel by pixel for content and format, copy and patse the sample code as below:
+To compare all pages of the **Test_text1.pdf** and the **Test_text2.pdf** pixel by pixel for content and format, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -722,7 +722,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareByPixel'(path + 'test_ima
 
 ### Description
 
-To save a specific PDF page as a image. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+To save a specific PDF page as an image. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 ### Parameters
 
 <table width="854">
@@ -754,7 +754,7 @@ To save a specific PDF page as a image. By default, the images are saved to your
 
 ### Example
 
-To save the Page 3 of the **Test_text1.pdf** PDF document as an image, copy and patse the sample code as below:
+To save the Page 3 of the **Test_text1.pdf** PDF document as an image, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -824,7 +824,7 @@ To save a range of PDF pages as images. By default, the images are saved to your
 
 ### Example
 
-To save the Page 1-3 of the **Test_text1.pdf** PDF document as images, copy and patse the sample code as below:
+To save the Page 1-3 of the **Test_text1.pdf** PDF document as images, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -879,7 +879,7 @@ This keyword saves all pages of the PDF document as images. By default, the imag
 
 ### Example
 
-To save all pages of the **Test_text1.pdf** PDF document as images, copy and patse the sample code as below:
+To save all pages of the **Test_text1.pdf** PDF document as images, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -946,7 +946,7 @@ This keyword extracts all the embedded images from a specific PDF page. By defau
 
 ### Example
 
-To extract all images from Page 3 of the **Test_text1.pdf** PDF document, copy and patse the sample code as below:
+To extract all images from Page 3 of the **Test_text1.pdf** PDF document, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -976,7 +976,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 ### Description
 
-This keywords extract all the embedded images from a range of PDF pages. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+This keyword extracts all the embedded images from a range of PDF pages. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 ### Parameters
 <table width="854">
 <tbody>
@@ -1015,7 +1015,7 @@ This keywords extract all the embedded images from a range of PDF pages. By defa
 
 ### Example
 
-To extract all images from Page 1-3 of the **Test_text1.pdf** PDF document, copy and patse the sample code as below:
+To extract all images from Page 1-3 of the **Test_text1.pdf** PDF document, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -1071,7 +1071,7 @@ This keyword extracts all the embedded images from all pages in the PDF document
 
 ### Example
 
-To extract all images from all pages of the **Test_text1.pdf** PDF document, copy and patse the sample code as below:
+To extract all images from all pages of the **Test_text1.pdf** PDF document, copy and paste the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
