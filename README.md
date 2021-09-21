@@ -14,10 +14,12 @@ The PDF Keyword plugin is using the PDFbox library. To activate the plugin, foll
 3. In the **External Libraries**, click **Add** to browse the .jar file downloaded from Step 1. Click **Apply and Close**. Katalon Studio automatically imports the library into the project.
 ## Execute Test Cases
 
-1. Download and unzip the **PDF Keywords Plugin** project. 
+### Enable PDF Keywords Plugin
+
+1. Download and unzip the **PDF Keywords Plugin** project.
 2. Copy and patse your testing PDF files in **Project Folder\Data Files**.
 3. Open the **PDF Keywords Plugin** project in Katalon Studio. To create a new test case, go to **File > New > Test Case**.
-4. In the new test case, switch to the **Script** tab, use the sample code below to import **PDF Keywords Plugin**:
+4. In the new test case, switch to the **Script** tab, use the sample code below to enable **PDF Keywords Plugin**:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -42,13 +44,17 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 
 ```
 
-5. Use one of the 14 custom keywords below from the plugin to start automating your test with PDF documents. You can also customize the **VerifyPDFkeywords** sample test case that comes along with this project for your testing purpose.
+### Use PDF Keyword Plugin
+
+PDF keywords Plugin offers 14 following custom keywords to help you start automating the test with PDF documents. 
+
+- To get the total number of pages of the PDF documents, use the following keywords:
 
 <details><summary> getPageNumber keyword </summary>
 
 ### Description
 
-To get the total number of pages of the document.
+This keyword gets the total number of pages in the document.
 ### Parameter
 
 <table width="854">
@@ -64,7 +70,7 @@ To get the total number of pages of the document.
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path</td>
 </tr>
 </tbody>
@@ -98,12 +104,15 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageNumber'(path + 'test_text
 
 ```
 </details>
+&nbsp;
+
+- To get the content of PDF file as plain text, use the following keywords:
 
 <details><summary> getTextFromPage keyword </summary>
 
 ### Description
 
-To get the content of a specific PDF page as plain text.
+This keyword gets the content of a specific PDF page as plain text.
 ### Parameter
 
 <table width="854">
@@ -166,7 +175,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextFromPage'(path + 'test_te
 
 ### Description
 
-To get the content of a range of PDF pages as plain text.
+This keyword gets the content of a range of PDF pages as plain text.
 
 ### Parameter
 
@@ -240,7 +249,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextInPageRange'(path + 'test
 
 ### Description
 
-To get all the content of the document as plain text.
+This keyword gets all content of the document as plain text.
 ### Parameter
 <table width="854">
 <tbody>
@@ -290,12 +299,15 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getAllText'(path + 'test_text1.p
 ```
 
 </details>
+&nbsp;
+
+- To compare the content between two PDF files, use the following keywords:
 
 <details><summary> compareFromPage keyword </summary>
 
 ### Description
 
-To compare a particular page of two given PDF documents. The value returns true if the pages match, false if otherwise.
+This keyword compares a particular page of two given PDF documents. The value returns true if the pages match, false if otherwise.
 ### Parameter
 <table width="854">
 <tbody>
@@ -310,7 +322,7 @@ To compare a particular page of two given PDF documents. The value returns true 
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -318,7 +330,7 @@ To compare a particular page of two given PDF documents. The value returns true 
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the actual file</td>
 </tr>
 <tr>
@@ -334,7 +346,7 @@ To compare a particular page of two given PDF documents. The value returns true 
 <td>
 <p>def</p>
 </td>
-<td>&nbsp;Optional</td>
+<td>Optional</td>
 <td>The strings need to exclude from the comparison</td>
 </tr>
 </tbody>
@@ -399,7 +411,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_te
 
 ### Description
 
-To compare a range of page from two given PDF documents. The value returns true if the pages match, false if otherwise.
+This keyword compares a range of page from two given PDF documents. The value returns true if the pages match, false if otherwise.
 
 ### Parameter
 <table width="854">
@@ -415,7 +427,7 @@ To compare a range of page from two given PDF documents. The value returns true 
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -423,7 +435,7 @@ To compare a range of page from two given PDF documents. The value returns true 
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the actual file</td>
 </tr>
 <tr>
@@ -447,7 +459,7 @@ To compare a range of page from two given PDF documents. The value returns true 
 <td>
 <p>def</p>
 </td>
-<td>&nbsp;Optional</td>
+<td>Optional</td>
 <td>The strings need to exclude from the comparison</td>
 </tr>
 </tbody>
@@ -455,7 +467,7 @@ To compare a range of page from two given PDF documents. The value returns true 
 
 ### Example
 
-1.  Compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -480,7 +492,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + 'test_text1.pdf', path + 'test_text2.pdf', 1, 3, null)
 
 ```
-2.  Compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -512,7 +524,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + 'test
 
 ### Description
 
-To compare all pages of two given PDF documents. The value returns true if the pages match, false if otherwise.
+This keyword compares all pages of two given PDF documents. The value returns true if the pages match, false if otherwise.
 
 ### Parameter
 <table width="854">
@@ -528,7 +540,7 @@ To compare all pages of two given PDF documents. The value returns true if the p
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -536,7 +548,7 @@ To compare all pages of two given PDF documents. The value returns true if the p
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the actual file</td>
 </tr>
 <tr>
@@ -544,7 +556,7 @@ To compare all pages of two given PDF documents. The value returns true if the p
 <td>
 <p>def</p>
 </td>
-<td>&nbsp;Optional</td>
+<td>Optional</td>
 <td>The strings need to exclude from the comparison</td>
 </tr>
 </tbody>
@@ -552,7 +564,7 @@ To compare all pages of two given PDF documents. The value returns true if the p
 
 ### Example
 
-1.  Compare all pages of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare all pages of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -577,7 +589,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path + 'test_text1.pdf', path + 'test_text2.pdf', null)
 
 ```
-2.  Compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 1-3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -604,14 +616,15 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path + 'test_te
 ```
 
 </details>
+&nbsp;
 
-</details>
+- To compare two PDF files pixel by pixel for content and format, use the following keyword:
 
 <details><summary> compareByPixel keyword </summary>
 
 ### Description
 
-To compare a range of pages from two PDF documents pixel by pixel for the content and format. The value returns true if the pages match, false if otherwise.
+This keyword compares a range of pages from two PDF documents pixel by pixel for the content and format. The value returns true if the pages match, false if otherwise.
 ### Parameter
 <table width="854">
 <tbody>
@@ -626,7 +639,7 @@ To compare a range of pages from two PDF documents pixel by pixel for the conten
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -634,7 +647,7 @@ To compare a range of pages from two PDF documents pixel by pixel for the conten
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the actual file</td>
 </tr>
 <tr>
@@ -658,7 +671,7 @@ To compare a range of pages from two PDF documents pixel by pixel for the conten
 <td>
 <p>boolean</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>To highlight differences in the images</td>
 </tr>
 <tr>
@@ -666,7 +679,7 @@ To compare a range of pages from two PDF documents pixel by pixel for the conten
 <td>
 <p>boolean</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>To compare all the pages of the PDF files (by default as soon as a mismatch is found in a page, this method exits)</td>
 </tr>
 </tbody>
@@ -701,7 +714,9 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareByPixel'(path + 'test_ima
 ```
 
 </details>
+&nbsp;
 
+- To save PDF pages as images.
 
 <details><summary> savePageAsImage keyword </summary>
 
@@ -785,7 +800,7 @@ To save a range of PDF pages as images. By default, the images are saved to your
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -856,7 +871,7 @@ To save all pages of the PDF document as images. By default, the images are save
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path</td>
 </tr>
 </tbody>
@@ -891,12 +906,15 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.saveAllPagesAsImages'(path + 'te
 ```
 
 </details>
+&nbsp;
+
+- To extract and save images from PDF pages, use the following keywords:
 
 <details><summary> extractImagesFromPage keyword </summary>
 
 ### Description
 
-To extract all the embedded images from a specific PDF page. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+This keyword extracts all the embedded images from a specific PDF page. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 ### Parameter
 
 <table width="854">
@@ -958,7 +976,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 ### Description
 
-To extract all the embedded images from a range of PDF pages. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+This keywords extract all the embedded images from a range of PDF pages. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 ### Parameter
 <table width="854">
 <tbody>
@@ -973,7 +991,7 @@ To extract all the embedded images from a range of PDF pages. By default, the im
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path of the expected file</td>
 </tr>
 <tr>
@@ -1029,7 +1047,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 ### Description
 
-To extract all the embedded images from all pages in the PDF document. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+This keyword extracts all the embedded images from all pages in the PDF document. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 
 ### Parameter
 <table width="854">
@@ -1045,7 +1063,7 @@ To extract all the embedded images from all pages in the PDF document. By defaul
 <td>
 <p>String</p>
 </td>
-<td>&nbsp;Required</td>
+<td>Required</td>
 <td>The absolute file path</td>
 </tr>
 </tbody>
@@ -1080,11 +1098,14 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractAllImages'(path + 'test_t
 ```
 
 </details>
+&nbsp;
 
+You can also customize the **VerifyPDFkeywords** sample test case that comes along with this project for your testing purpose.
 
 6. Check the test case results in the **Log viewer** tab.
 
 <img src="https://github.com/katalon-studio/docs-images/raw/master/katalon-studio/docs/pdf-keywords-plugin/KS-README-Results-in-Log-viewer-tab.png" alt="Results in Log Viewer Tab" width=70%>
+
 ## License
 
 Copyright (c) Katalon LLC. All rights reserved.
