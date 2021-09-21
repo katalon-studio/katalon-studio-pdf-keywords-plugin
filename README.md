@@ -46,22 +46,22 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 
 ### Use PDF Keyword Plugin
 
-PDF keywords Plugin offers 14 following custom keywords to help you start automating the test with PDF documents. 
+PDF keywords Plugin offers 14 custom keywords to help you start automating the test with PDF documents. 
 
-- To get the total number of pages of the PDF documents, use the following keywords:
+- To get the total number of pages of the PDF documents, use the following keyword:
 
-<details><summary> getPageNumber keyword </summary>
+<details><summary> The getPageNumber keyword </summary>
 
 ### Description
 
 This keyword gets the total number of pages in the document.
-### Parameter
+### Parameters
 
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -108,18 +108,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageNumber'(path + 'test_text
 
 - To get the content of PDF file as plain text, use the following keywords:
 
-<details><summary> getTextFromPage keyword </summary>
+<details><summary> The getTextFromPage keyword </summary>
 
 ### Description
 
 This keyword gets the content of a specific PDF page as plain text.
-### Parameter
+### Parameters
 
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -171,19 +171,19 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextFromPage'(path + 'test_te
 ```
 </details>
 
-<details><summary> getTextInPageRange keyword </summary>
+<details><summary> The getTextInPageRange keyword </summary>
 
 ### Description
 
 This keyword gets the content of a range of PDF pages as plain text.
 
-### Parameter
+### Parameters
 
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -245,17 +245,17 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextInPageRange'(path + 'test
 </details>
 
 
-<details><summary> getAllText keyword </summary>
+<details><summary> The getAllText keyword </summary>
 
 ### Description
 
 This keyword gets all content of the document as plain text.
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -303,17 +303,17 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getAllText'(path + 'test_text1.p
 
 - To compare the content between two PDF files, use the following keywords:
 
-<details><summary> compareFromPage keyword </summary>
+<details><summary> The compareFromPage keyword </summary>
 
 ### Description
 
 This keyword compares a particular page of two given PDF documents. The value returns true if the pages match, false if otherwise.
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -354,7 +354,7 @@ This keyword compares a particular page of two given PDF documents. The value re
 
 ### Example
 
-1.  Compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
+1.  To compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file without excluding any strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -379,7 +379,7 @@ String path = RunConfiguration.getProjectDir() + '/Data Files/'
 CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_text1.pdf', path + 'test_text2.pdf', 3, null)
 
 ```
-2.  Compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
+2.  To compare Page 3 of the **Test_text1.pdf** file and the **Test_text2.pdf** file excluding the **1998**, **1999** strings, copy and patse the sample code as below:
 
 ``` groovy
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
@@ -407,18 +407,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_te
 </details>
 
 
-<details><summary> compareInPageRange keyword </summary>
+<details><summary> The compareInPageRange keyword </summary>
 
 ### Description
 
 This keyword compares a range of page from two given PDF documents. The value returns true if the pages match, false if otherwise.
 
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -520,18 +520,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + 'test
 
 </details>
 
-<details><summary> compareAllPages keyword </summary>
+<details><summary> The compareAllPages keyword </summary>
 
 ### Description
 
 This keyword compares all pages of two given PDF documents. The value returns true if the pages match, false if otherwise.
 
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -620,17 +620,17 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path + 'test_te
 
 - To compare two PDF files pixel by pixel for content and format, use the following keyword:
 
-<details><summary> compareByPixel keyword </summary>
+<details><summary> The compareByPixel keyword </summary>
 
 ### Description
 
 This keyword compares a range of pages from two PDF documents pixel by pixel for the content and format. The value returns true if the pages match, false if otherwise.
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -716,20 +716,20 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareByPixel'(path + 'test_ima
 </details>
 &nbsp;
 
-- To save PDF pages as images.
+- To save PDF pages as images, use the following keywords:
 
-<details><summary> savePageAsImage keyword </summary>
+<details><summary> The savePageAsImage keyword </summary>
 
 ### Description
 
 To save a specific PDF page as a image. By default, the images are saved to your **Project Folder\Data Files\Temp**.
-### Parameter
+### Parameters
 
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -781,17 +781,17 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.savePageAsImage'(path + 'test_te
 ```
 </details>
 
-<details><summary> savePageRangeAsImages keyword </summary>
+<details><summary> The savePageRangeAsImages keyword </summary>
 
 ### Description
 
 To save a range of PDF pages as images. By default, the images are saved to your **Project Folder\Data Files\Temp**.
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -851,18 +851,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.savePageRangeAsImages'(path + 't
 ```
 </details>
 
-<details><summary> saveAllPagesAsImages keyword </summary>
+<details><summary> The saveAllPagesAsImages keyword </summary>
 
 ### Description
 
-To save all pages of the PDF document as images. By default, the images are saved to your **Project Folder\Data Files\Temp**.
+This keyword saves all pages of the PDF document as images. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -910,18 +910,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.saveAllPagesAsImages'(path + 'te
 
 - To extract and save images from PDF pages, use the following keywords:
 
-<details><summary> extractImagesFromPage keyword </summary>
+<details><summary> The extractImagesFromPage keyword </summary>
 
 ### Description
 
 This keyword extracts all the embedded images from a specific PDF page. By default, the images are saved to your **Project Folder\Data Files\Temp**.
-### Parameter
+### Parameters
 
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -972,17 +972,17 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 ```
 </details>
-<details><summary> extractImagesInPageRange keyword </summary>
+<details><summary> The extractImagesInPageRange keyword </summary>
 
 ### Description
 
 This keywords extract all the embedded images from a range of PDF pages. By default, the images are saved to your **Project Folder\Data Files\Temp**.
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
@@ -1043,18 +1043,18 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 </details>
 
-<details><summary> extractAllImages keyword </summary>
+<details><summary> The extractAllImages keyword </summary>
 
 ### Description
 
 This keyword extracts all the embedded images from all pages in the PDF document. By default, the images are saved to your **Project Folder\Data Files\Temp**.
 
-### Parameter
+### Parameters
 <table width="854">
 <tbody>
 <tr>
-<td><strong>Param</strong></td>
-<td><strong>Param Type</strong></td>
+<td><strong>Parameter</strong></td>
+<td><strong>Type</strong></td>
 <td><strong>Mandatory</strong></td>
 <td><strong>Description</strong></td>
 </tr>
