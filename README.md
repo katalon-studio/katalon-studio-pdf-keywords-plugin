@@ -50,7 +50,7 @@ PDF keywords Plugin offers 14 custom keywords to help you start automating the t
 
 - To get the total number of pages of the PDF documents, use the following keyword:
 
-<details><summary> The getPageNumber keyword </summary>
+<details><summary> The <code>getPageNumber</code> keyword </summary>
 
 ### Description
 
@@ -108,7 +108,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getPageNumber'(path + 'test_text
 
 - To get the content of the PDF file as plain text, use the following keywords:
 
-<details><summary> The getTextFromPage keyword </summary>
+<details><summary> The <code>getTextFromPage</code> keyword </summary>
 
 ### Description
 
@@ -171,7 +171,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextFromPage'(path + 'test_te
 ```
 </details>
 
-<details><summary> The getTextInPageRange keyword </summary>
+<details><summary> The <code>getTextInPageRange</code> keyword </summary>
 
 ### Description
 
@@ -245,7 +245,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getTextInPageRange'(path + 'test
 </details>
 
 
-<details><summary> The getAllText keyword </summary>
+<details><summary> The <code>getAllText</code> keyword </summary>
 
 ### Description
 
@@ -303,7 +303,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.getAllText'(path + 'test_text1.p
 
 - To compare the content between two PDF files, use the following keywords:
 
-<details><summary> The compareFromPage keyword </summary>
+<details><summary> The <code>compareFromPage</code> keyword </summary>
 
 ### Description
 
@@ -407,7 +407,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareFromPage'(path + 'test_te
 </details>
 
 
-<details><summary> The compareInPageRange keyword </summary>
+<details><summary> The <code>compareInPageRange</code> keyword </summary>
 
 ### Description
 
@@ -520,7 +520,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareInPageRange'(path + 'test
 
 </details>
 
-<details><summary> The compareAllPages keyword </summary>
+<details><summary> The <code>compareAllPages</code> keyword </summary>
 
 ### Description
 
@@ -620,7 +620,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareAllPages'(path + 'test_te
 
 - To compare two PDF files pixel by pixel for content and format, use the following keyword:
 
-<details><summary> The compareByPixel keyword </summary>
+<details><summary> The <code>compareByPixel</code> keyword </summary>
 
 ### Description
 
@@ -718,7 +718,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.compareByPixel'(path + 'test_ima
 
 - To save PDF pages as images, use the following keywords:
 
-<details><summary> The savePageAsImage keyword </summary>
+<details><summary> The <code>savePageAsImage</code> keyword </summary>
 
 ### Description
 
@@ -781,7 +781,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.savePageAsImage'(path + 'test_te
 ```
 </details>
 
-<details><summary> The savePageRangeAsImages keyword </summary>
+<details><summary> The <code>savePageRangeAsImages</code> keyword </summary>
 
 ### Description
 
@@ -851,7 +851,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.savePageRangeAsImages'(path + 't
 ```
 </details>
 
-<details><summary> The saveAllPagesAsImages keyword </summary>
+<details><summary> The <code>saveAllPagesAsImages</code> keyword </summary>
 
 ### Description
 
@@ -910,7 +910,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.saveAllPagesAsImages'(path + 'te
 
 - To extract and save images from PDF pages, use the following keywords:
 
-<details><summary> The extractImagesFromPage keyword </summary>
+<details><summary> The <code>extractImagesFromPage</code> keyword </summary>
 
 ### Description
 
@@ -972,7 +972,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 ```
 </details>
-<details><summary> The extractImagesInPageRange keyword </summary>
+<details><summary> The <code>extractImagesInPageRange</code> keyword </summary>
 
 ### Description
 
@@ -1043,7 +1043,7 @@ CustomKeywords.'com.kms.katalon.keyword.pdf.PDF.extractImagesFromPage'(path + 't
 
 </details>
 
-<details><summary> The extractAllImages keyword </summary>
+<details><summary> The <code>extractAllImages</code> keyword </summary>
 
 ### Description
 
