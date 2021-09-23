@@ -1,10 +1,6 @@
 # Katalon Studio PDF Keywords Plugin
 
 The PDF Keywords Plugin allows testers to manipulate existing PDF documents and extract content from them. This plugin comes with a sample test case that helps you develop further to suit your testing's purposes.
-
-## Prerequisite
-
-- An active Katalon Studio Enterprise license. You can refer to this document here: [Katalon licensing](https://docs.katalon.com/katalon-studio/docs/license.html).
 ## Set Parameter
 
 The PDF Keywords plugin uses the PDFbox library. To activate the plugin, follow these steps:
